@@ -479,10 +479,7 @@ padding: 20px !important;
                    <img onclick="openForm()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc91acb29-a294-4172-8ae9-aed2591db6c9%7D_Mitch_Morris_70x70.png" alt="ProfilePic">
 
                   </div>
-				  <div class="profile-picture ProfilePic" id="ProfilePic"  style="display:none;">
-                   <img onclick="openFormProfile()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B0c085a77-a36d-470d-aad8-7b2d723c9ee2%7D_Profile70x70.png" alt="ProfilePic">
-
-                  </div>
+				 
 
   <div class="form-popup" id="myForm">
   <Button class="close-button" onclick="closeProfile()">&times;</Button>
@@ -494,7 +491,7 @@ padding: 20px !important;
 
     
     
-	<p><b>Email : mitch.moris_btcc@oracledemos.com</b></p>
+	<p><b>Email : <span id="Profileemail"></span></b></p>
     <p><b>User id : MORRIS1234 </b></p>
     <p><b>Phone : 84777747711 </b></p>
 
@@ -503,24 +500,7 @@ padding: 20px !important;
   </form>
 </div>
 
-<div class="form-popup" id="myFormProfile">
-  <Button class="close-button" onclick="closeForm()">&times;</Button>
-  <form class="form-container">
-  
-   <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B0c085a77-a36d-470d-aad8-7b2d723c9ee2%7D_Profile70x70.png" style="vertical-align: middle;display: block;margin-left: auto;margin-right: auto;" alt="ProfilePic">
 
-    <h2>Hi User</h2>
-
-    
-    
-	<p><b>Email : </b></p>
-    <p><b>User id :  </b></p>
-    <p><b>Phone :  </b></p>
-
-    
-    <button type="button" class="btn cancel" onclick="closeFormProfile()" href="#">Sign Out</button>
-  </form>
-</div>
 				  
                </div>
 			   <!-- /.Login end-->
@@ -1962,13 +1942,14 @@ function submitLogin() {
 }
 
 // Backend code
-const hardcodedEmailId = "mitch.moris_btcc@oracledemos.com";
+//const hardcodedEmailId = "mitch.moris_btcc@oracledemos.com";
 //const hardcodedPassword = "MORRIS1234";
 
 function login(emailId, password) {
   if (emailId != '' && password != '') {
     // Login success
     // Close the popup modal
+	document.getElementById('Profileemail').innerHTML = $("#email").val();
 	document.getElementById('loginsuccess').style.display='block';
 	document.getElementById('loginfailure').style.display='none';
 	setTimeout(function() {
@@ -1976,12 +1957,9 @@ function login(emailId, password) {
   //document.getElementById('email').value='' ;
 //document.getElementById('password').value='' ;
 }, 1000);
-    if (emailId === hardcodedEmailId) {
-	ChrisProfile();
-	}
-	else {
+    
 	Profile();
-	}
+	
   } 
   else {
     // Login failure
@@ -2030,11 +2008,11 @@ document.getElementById('loginm').style.display='block';
 
 }
 
-function ChrisProfile() {
+function Profile() {
 document.getElementById('slider').style.display='none';
 document.getElementById('StaticHomeBanner').style.display='block';
 document.getElementById('Login1').style.display='none';
-document.getElementById('ProfilePic').style.display='block';
+document.getElementById('ProfilePic1').style.display='block';
 document.getElementById('ApplyBtnlogin').style.display='none';
 document.getElementById('ApplyBtn1').style.display='block';
 document.getElementById('ApplyBtn2').style.display='block';
@@ -2076,52 +2054,7 @@ window.ORA = window.ORA || {productReady: []};
     ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.click({"data": cxDataObject})}}(cxDataObject)]);
 }
 
-function Profile() {
-document.getElementById('slider').style.display='none';
-document.getElementById('StaticHomeBanner').style.display='block';
-document.getElementById('Login1').style.display='none';
-document.getElementById('ProfilePic').style.display='block';
-document.getElementById('ProfilePic1').style.display='none';
-document.getElementById('ApplyBtnlogin').style.display='none';
-document.getElementById('ApplyBtn1').style.display='block';
-document.getElementById('ApplyBtn2').style.display='block';
-document.getElementById('PersonalizedOffers').style.display='block';
-document.getElementById('DigitalBanking').style.display='none';
-document.getElementById('OtherLoans').style.display='none';
-document.getElementById('CreditCards').style.display='none';
-document.getElementById('fe1721').value='';
-document.getElementById('fe1722').value='' ;
-document.getElementById('fe1720').value= document.getElementById('email').value;
-document.getElementById('fe1723').value='' ;
-document.getElementById('fe1730').value='' ;
-document.getElementById('section-Recommendations-PersonalizedOffers').style.display='block';
-document.getElementById('section-Recommendations-OtherLoans').style.display='none';
-document.getElementById('section-Recommendations-SmartBanking').style.display='none';
-document.getElementById('section-Recommendations-Creditcards').style.display='none';
-document.getElementById('CreditOffers').style.display='none';
-document.getElementById('section-Recommendations').style.display='none';
 
-var cxDataObject = {
-   
-   "wt.z_page_category":"Home Loan Page", 
-   "wt.z_utm_source":"Online search",
-   "wt.z_utm_medium":"Online, Banking",
-   "wt.z_utm_content":"Banking",
-   "wt.z_utm_campaign":"Home Loan",
-   "wt.z_utm_term":"",
-   "wt.z_userid":"",
-   "wt.z_consent":"Y",
-   "wt.z_email": document.getElementById('email').value,
-   "wt.z_firstname":"",
-   "wt.z_lastname":"",
-   "wt.z_mobilephone":"",
-   "wt.tx_e":"v",
-   "wt.z_activity":"Login",
-   "wt.z_language":"English",
-};
-window.ORA = window.ORA || {productReady: []};
-    ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.click({"data": cxDataObject})}}(cxDataObject)]);
-}
 
 
 function ApplyLoan() {
@@ -2150,28 +2083,22 @@ window.ORA = window.ORA || {productReady: []};
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
-function openFormProfile() {
-  document.getElementById("myFormProfile").style.display = "block";
-}
+
 function closeProfile() {
   document.getElementById("myForm").style.display = "none";
 }
-function closeFromProfile() {
-  document.getElementById("myFormProfile").style.display = "none";
-}
+
 function closeForm() {
 document.getElementById('slider').style.display='block';
 document.getElementById('StaticHomeBanner').style.display='none';
 document.getElementById('loginm').style.display='none';
   document.getElementById("myForm").style.display = "none";
-  document.getElementById("myFormProfile").style.display = "none";
-  document.getElementById('PersonalizedOffers').style.display='none';
+    document.getElementById('PersonalizedOffers').style.display='none';
   document.getElementById('section-Recommendations').style.display='block';
   document.getElementById('OtherLoans').style.display='block';
 document.getElementById('DigitalBanking').style.display='block';
 document.getElementById('CreditCards').style.display='block';
     document.getElementById("ProfilePic1").style.display = "none";
-	document.getElementById("ProfilePic").style.display = "none";
 	document.getElementById('ApplyBtn1').style.display='none';
 	document.getElementById('ApplyBtn2').style.display='none';
 	document.getElementById('ApplyBtnlogin').style.display='block';
