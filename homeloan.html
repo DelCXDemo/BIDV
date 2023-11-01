@@ -479,7 +479,7 @@ padding: 20px !important;
                    <img onclick="openForm()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc91acb29-a294-4172-8ae9-aed2591db6c9%7D_Mitch_Morris_70x70.png" alt="ProfilePic">
 
                   </div>
-				  
+				 
 
   <div class="form-popup" id="myForm">
   <Button class="close-button" onclick="closeProfile()">&times;</Button>
@@ -491,7 +491,7 @@ padding: 20px !important;
 
     
     
-	<p><b>Email : mitch.moris_btcc@oracledemos.com</b></p>
+	<p><b>Email : <span id="Profileemail"></span></b></p>
     <p><b>User id : MORRIS1234 </b></p>
     <p><b>Phone : 84777747711 </b></p>
 
@@ -499,6 +499,8 @@ padding: 20px !important;
     <button type="button" class="btn cancel" onclick="closeForm()" href="#">Sign Out</button>
   </form>
 </div>
+
+
 				  
                </div>
 			   <!-- /.Login end-->
@@ -586,6 +588,7 @@ padding: 20px !important;
     </div>
     <div class="w3-container" style="padding: 0.01em 16px;">
       <div class="w3-section" style="margin-top: 16px!important;margin-bottom: 16px!important;">
+	  <input type="hidden" name="activity" id="activity" value="">
         <label><b>Email ID</b></label>
         <input class=""  id="email" type="text" placeholder="Enter Email ID" style="margin-bottom: 16px!important;border: 1px solid #ccc!important;padding: 8px;display: block; width: 100%;">
         <label><b>Password</b></label>
@@ -1940,23 +1943,26 @@ function submitLogin() {
 }
 
 // Backend code
-const hardcodedEmailId = "mitch.moris_btcc@oracledemos.com";
-const hardcodedPassword = "MORRIS1234";
+//const hardcodedEmailId = "mitch.moris_btcc@oracledemos.com";
+//const hardcodedPassword = "MORRIS1234";
 
 function login(emailId, password) {
-  if (emailId === hardcodedEmailId && password === hardcodedPassword) {
+  if (emailId != '' && password != '') {
     // Login success
     // Close the popup modal
+	document.getElementById('Profileemail').innerHTML = $("#email").val();
 	document.getElementById('loginsuccess').style.display='block';
 	document.getElementById('loginfailure').style.display='none';
 	setTimeout(function() {
   document.getElementById('loginm').style.display='none';
-  document.getElementById('email').value='' ;
-document.getElementById('password').value='' ;
+  //document.getElementById('email').value='' ;
+//document.getElementById('password').value='' ;
 }, 1000);
     
 	Profile();
-  } else {
+	
+  } 
+  else {
     // Login failure
 	document.getElementById('loginfailure').style.display='block';
 	document.getElementById('loginsuccess').style.display='none';
@@ -1964,6 +1970,10 @@ document.getElementById('password').value='' ;
     
   }
 }
+
+
+
+
 
 function showMyDivHome() {
   document.getElementById('HomeLoan').hidden = false;
@@ -2013,7 +2023,7 @@ document.getElementById('OtherLoans').style.display='none';
 document.getElementById('CreditCards').style.display='none';
 document.getElementById('fe1721').value='Mitch';
 document.getElementById('fe1722').value='Moris' ;
-document.getElementById('fe1720').value='mitch.moris_btcc@oracledemos.com' ;
+document.getElementById('fe1720').value= document.getElementById('email').value;
 document.getElementById('fe1723').value='84777747711' ;
 document.getElementById('fe1730').value='MORRIS1234' ;
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='block';
@@ -2033,7 +2043,7 @@ var cxDataObject = {
    "wt.z_utm_term":"",
    "wt.z_userid":"MORRIS1234",
    "wt.z_consent":"Y",
-   "wt.z_email":"mitch.moris_btcc@oracledemos.com",
+   "wt.z_email": document.getElementById('email').value,
    "wt.z_firstname":"Mitch",
    "wt.z_lastname":"Moris",
    "wt.z_mobilephone":"84777747711",
@@ -2044,6 +2054,9 @@ var cxDataObject = {
 window.ORA = window.ORA || {productReady: []};
     ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.click({"data": cxDataObject})}}(cxDataObject)]);
 }
+
+
+
 
 function ApplyLoan() {
 
@@ -2057,7 +2070,7 @@ var cxDataObject = {
    "wt.z_utm_term":"",
    "wt.z_userid":"MORRIS1234",
    "wt.z_consent":"Y",
-   "wt.z_email":"mitch.moris_btcc@oracledemos.com",
+   "wt.z_email": document.getElementById('email').value,
    "wt.z_firstname":"Mitch",
    "wt.z_lastname":"Moris",
    "wt.z_mobilephone":"84777747711",
@@ -2071,15 +2084,17 @@ window.ORA = window.ORA || {productReady: []};
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
+
 function closeProfile() {
   document.getElementById("myForm").style.display = "none";
 }
+
 function closeForm() {
 document.getElementById('slider').style.display='block';
 document.getElementById('StaticHomeBanner').style.display='none';
 document.getElementById('loginm').style.display='none';
   document.getElementById("myForm").style.display = "none";
-  document.getElementById('PersonalizedOffers').style.display='none';
+    document.getElementById('PersonalizedOffers').style.display='none';
   document.getElementById('section-Recommendations').style.display='block';
   document.getElementById('OtherLoans').style.display='block';
 document.getElementById('DigitalBanking').style.display='block';
@@ -2099,6 +2114,7 @@ document.getElementById('loginsuccess').style.display='none';
 document.getElementById('loginfailure').style.display='none';
 document.getElementById('CreditOffers').style.display='none';
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='none';
+
 }
 
 
