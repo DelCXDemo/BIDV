@@ -2198,36 +2198,7 @@ btn.on('click', function(e) {
 });
 </script>
 
-<script type="text/javascript">
-// Get the profile picture pop-up element
-    var profilePicturePopUp = document.querySelector(".form-popup");
 
-    // Get the close button element
-    var closeButton = profilePicturePopUp.querySelector(".close-button");
-var stickyMenu = document.getElementById("sticky-menu");
-
-// Get the menu icon element
-var menuIcon = stickyMenu.querySelector(".icon");
-
-// Add an event listener to the menu icon element
-menuIcon.addEventListener("click", function() {
-  // Toggle the sticky menu element's active class
-  stickyMenu.classList.toggle("active");
-});
-
-// Add an event listener to the window
-window.addEventListener("scroll", function() {
-  // Get the scroll position
-  var scrollPosition = window.scrollY;
-
-  // If the scroll position is greater than zero, fix the sticky menu element
-  if (scrollPosition > 0) {
-    stickyMenu.classList.add("fixed");
-  } else {
-    stickyMenu.classList.remove("fixed");
-  }
-});
-</script>
 <script  type="text/JavaScript">
 function PersonalizedOffers() {
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='block';
@@ -2306,14 +2277,37 @@ window.ORA = window.ORA || {productReady: []};
 
 <script>function handleFormSubmit(ele) {
 	unknownsubmittrack();
-    var submitButton = ele.querySelector('input[type=submit]');
-    var spinner = document.createElement('span');
-    spinner.setAttribute('class', 'loader');
-    submitButton.setAttribute('disabled', true);
-    submitButton.style.cursor = 'wait';
-    submitButton.parentNode.appendChild(spinner);
-    return true;
-  }
+     event.preventDefault();
+
+  // Create an AJAX object.
+  var xhr = new XMLHttpRequest();
+
+  // Set the HTTP method and request URL.
+  xhr.open('POST', ele.action);
+
+  // Set the request headers.
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  // Set the request body.
+  xhr.send(new FormData(ele));
+
+  // Listen for the response.
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Success!
+      // Show the AJAX success message below the form.
+      var successMessage = document.createElement('div');
+      successMessage.textContent = 'Your form has been submitted successfully!';
+      ele.parentNode.appendChild(successMessage);
+    } else {
+      // Error!
+      // Show the AJAX error message below the form.
+      var errorMessage = document.createElement('div');
+      errorMessage.textContent = 'An error occurred while submitting your form.';
+      ele.parentNode.appendChild(errorMessage);
+    }
+  };
+}
   function resetSubmitButton(e){
     var submitButtons = e.target.form.getElementsByClassName('submit-button');
     for(var i=0;i<submitButtons.length;i++){
