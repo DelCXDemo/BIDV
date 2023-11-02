@@ -2276,37 +2276,38 @@ window.ORA = window.ORA || {productReady: []};
 </script>
 
 <script>function handleFormSubmit(ele) {
-	unknownsubmittrack();
+	
      event.preventDefault();
 
-  // Create an AJAX object.
-  var xhr = new XMLHttpRequest();
+  $('form.elq-form').submit(function(event) {
+  event.preventDefault();
 
-  // Set the HTTP method and request URL.
-  xhr.open('POST', ele.action);
+  // Declare the formData variable inside the submit() event handler.
+  var formData = new FormData();
 
-  // Set the request headers.
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// Add the form data to the FormData object.
+formData.append('emailAddress', document.getElementById('fe1720').value);
+formData.append('firstName', document.getElementById('fe1721').value);
+formData.append('lastName', document.getElementById('fe1722').value);
+formData.append('mobilePhone', document.getElementById('fe1723').value);
 
-  // Set the request body.
-  xhr.send(new FormData(ele));
-
-  // Listen for the response.
-  xhr.onload = function() {
-    if (xhr.status === 200) {
+  $.ajax({
+    url: 'https://s348607904.t.eloqua.com/e/f2?elqFormName=BIDVHomeLoanDemo&elqSiteID=348607904&Language=English',
+    type: 'POST',
+    data: formData,
+    processData: false,
+  contentType: false,
+    success: function(data) {
       // Success!
-      // Show the AJAX success message below the form.
-      var successMessage = document.createElement('div');
-      successMessage.textContent = 'Your form has been submitted successfully!';
-      ele.parentNode.appendChild(successMessage);
-    } else {
+      alert("Success");
+	  unknownsubmittrack();
+    },
+    error: function(error) {
       // Error!
-      // Show the AJAX error message below the form.
-      var errorMessage = document.createElement('div');
-      errorMessage.textContent = 'An error occurred while submitting your form.';
-      ele.parentNode.appendChild(errorMessage);
+      alert("Error: " + error.statusText);
     }
-  };
+  });
+});
 }
   function resetSubmitButton(e){
     var submitButtons = e.target.form.getElementsByClassName('submit-button');
