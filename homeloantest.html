@@ -420,6 +420,21 @@ a:focus, a:hover { text-decoration: none; color: #ffbd05; }
 .btn-link:hover {
     color: #ffbd05;
 	border-bottom: 2px solid #00524E;}	
+	.tiny-footer {
+    background-color: #00524E;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	    color: #FFF;
+}
+iframe {
+    overflow-clip-margin: content-box !important;
+    overflow: clip !important;
+    border-width: 2px;
+    border-style: inset;
+    border-color: #00524E;
+   
+}
 </style>
    </head>
    <body>
@@ -430,9 +445,7 @@ a:focus, a:hover { text-decoration: none; color: #ffbd05; }
                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-6 col-6">
                   <!-- logo -->
                   <div class="logo">
-                     <a href="#"><img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bd3d2f321-fef9-48b4-8b51-832674ed689a%7D_BIDVNew.png" alt="BIDV Bank" style="
-    display: block;
-"></a>
+                     <a href="#"><img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bd3d2f321-fef9-48b4-8b51-832674ed689a%7D_BIDVNew.png" alt="BIDV Bank" style="display: block;"></a>
                   </div>
                </div>
                <!-- logo -->
@@ -494,7 +507,7 @@ a:focus, a:hover { text-decoration: none; color: #ffbd05; }
                      <button onclick="Loginpopup()" class="btn btn-default">Login</button>
                   </div>
 				  <div class="profile-picture ProfilePic" id="ProfilePic1"  style="display:none;">
-                   <img onclick="openForm()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc91acb29-a294-4172-8ae9-aed2591db6c9%7D_Mitch_Morris_70x70.png" alt="ProfilePic">
+                   <img onclick="openForm()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B732d96e7-31cb-4ed9-b771-c9703d56d7b2%7D_MitchMorris.png" alt="ProfilePic">
 
                   </div>
 				 
@@ -503,7 +516,7 @@ a:focus, a:hover { text-decoration: none; color: #ffbd05; }
   <Button class="close-button" onclick="closeProfile()">&times;</Button>
   <form class="form-container">
   
-   <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc91acb29-a294-4172-8ae9-aed2591db6c9%7D_Mitch_Morris_70x70.png" style="vertical-align: middle;display: block;margin-left: auto;margin-right: auto;" alt="ProfilePic">
+   <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B732d96e7-31cb-4ed9-b771-c9703d56d7b2%7D_MitchMorris.png" style="vertical-align: middle;display: block;margin-left: auto;margin-right: auto;" alt="ProfilePic">
 
     <h2>Hi Mitch Moris</h2>
 
@@ -665,7 +678,7 @@ a:focus, a:hover { text-decoration: none; color: #ffbd05; }
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-8 col-8">
                                  <div class="btn-action"> 
 								 <button  onclick="Loginpopup()" id="ApplyBtnlogin" style="display: block; position:absolute; padding-left: 45px;" class="btn btn-apply">Apply for loan</button>
-								 <a  onclick="ApplyLoan()" id="ApplyBtn1" style="display: none; position:absolute; padding-left: 45px;" href="http://marketingcloud04.eloquademos.com/DemoBank_Login_TY_EN?elqTrackId=4f8cd0ad7aed427b9eb65a8e9397b5be" class="btn btn-apply">Apply for loan</a> 
+								 <a  onclick="ApplyLoan()" id="ApplyBtn1" style="display: none; position:absolute; padding-left: 45px;" href="#my_iframe_container" class="btn btn-apply">Apply for loan</a> 
 								 <a href="#section-apply" class="btn btn-primary">Get a call back</a> 
 								 <a href="#" class="btn btn-secondary">Emi Calculator</a> </div>
                               </div>
@@ -739,6 +752,13 @@ Digital Banking</a>
                   <div class="wrapper-content bg-white">
                       <!-- content start -->
     <div class="container">
+	
+	<div id="my_iframe_container" style="display:none">
+	
+  <iframe class="iframe" id="my_iframe" height="1080" width="1200" src="https://gseopa00175.rightnowdemo.com/web-determinations/startsession/Loan%20Advisor%20Demo" style="
+    transform: scale(0.80);
+    margin: 0px -55px;
+"></iframe></div>
 	<div class="pinside60" id="section-Recommendations">
 						<div class="row">
                               <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12 col-12">
@@ -1249,7 +1269,7 @@ Smart banking features are technologies and services that use artificial intelli
                         </div>
                         <hr>
                         <p>Vestibulum placerat velit et libero facilisis, at luctus dui cursus. Nullam non est at ipsum dignissim eleifend nec eu arcu. </p>
-                         <a onclick="ApplyLoan()" id="ApplyBtn2" style="display: none; position:absolute;" href="http://marketingcloud04.eloquademos.com/DemoBank_Login_TY_EN?elqTrackId=d2fc6aa9f7c04455901683e938e52f76" class="btn btn-apply">Apply for loan</a>
+                         <a onclick="ApplyLoan()" id="ApplyBtn2" style="display: none; position:absolute;" href="#my_iframe_container" class="btn btn-apply">Apply for loan</a>
                      </div>
                      <div class="section-scroll" id="section-typeloan">
                         <div class="bg-light pinside60">
@@ -1443,8 +1463,8 @@ Smart banking features are technologies and services that use artificial intelli
                            <div class="row">
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                  <div class="section-title mb60 text-center">
-                                    <h1>Apply Now</h1>
-                                    <p>Now apply for a Home Loan online, All you need to do is provide your details below to proceed with application form.</p>
+                                    <h1>Subscribe to receive latest updates from BIDV</h1>
+                                    <p>Now subscribe for a offers and lastest news related to Loans, All you need to do is provide your details below to proceed with application form.</p>
                                  </div>
                               </div>
                            </div>
@@ -1569,7 +1589,7 @@ Smart banking features are technologies and services that use artificial intelli
             </div>
          </div>
       </div>
-	<div id="homeLoanPopup" class="" style="display: none;text-align: justify;z-index: 3;padding-top: 120px;position: fixed;left: 15px;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgb(0 0 0 / 0%);">
+	<!--div id="homeLoanPopup" class="" style="display: none;text-align: justify;z-index: 3;padding-top: 120px;position: fixed;left: 15px;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgb(0 0 0 / 0%);">
    <div class="" style="max-width: 310px;animation: animatezoom 0.6s;box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);width: 255px;margin: auto; background-color: #fff; position: absolute; padding: 0; outline: 0;">
       <div class="" style="text-align: center!important;">
          <span onclick="document.getElementById('homeLoanPopup').style.display='none'" class="hover-red " style="font-size: 25px!important;position: absolute;right: 0;top: 0;padding: 10px;">×</span>
@@ -1585,8 +1605,24 @@ Smart banking features are technologies and services that use artificial intelli
          </div>
       </div>
    </div>
-</div>  
-
+</div-->  
+<div id="homeLoanPopup" class="" style="display: block; z-index: 3; padding-top: 100px; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+   <div class="" style="max-width: 255px;animation: animatezoom 0.6s;box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);width: 900px;margin: auto; background-color: #fff; position: relative; padding: 0; outline: 0;">
+      <div class="" style="text-align: center!important;">
+         <span onclick="document.getElementById('homeLoanPopup').style.display='none'" class="hover-red " style="font-size: 25px!important;position: absolute;right: 0;top: 0;padding: 10px;">×</span>
+      </div>
+      <div class="w3-container" style="padding: 0.01em 16px;font-family: Verdana,sans-serif;font-size: 15px;line-height: 1.5;">
+         <div class="w3-section" style="margin-top: 30px!important;margin-bottom: 16px!important;font-family: Verdana,sans-serif;font-size: 15px;color: #000 !important; line-height: 1.5;">
+           <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B5d60bfef-89d6-4329-9378-901d99efe8a6%7D_House60x60.png" alt="BacktoHomeLoan" style="width: 50px;display: block;margin-left: auto;margin-right: auto;
+">           
+		   <label><h1 style="font-size: 20px;">We want you back!</h1></label>
+			
+  
+  <a href="#Homeloan" onclick="showMyDivHome()">Continue where you left.. Click here to apply for home loan!</a>
+         </div>
+      </div>
+   </div>
+</div>
       <div class=" ">
          <!-- content start -->
          <div class="container">
@@ -1932,7 +1968,8 @@ Smart banking features are technologies and services that use artificial intelli
          <div class="container">
             <div class="row">
                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                  <p><a target="_blank" href="#">Demo Bank</a></p>
+                  <p><a href="#"><img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B6a63f02e-04d2-4760-8ee6-298da909130a%7D_Footer.png" alt="BIDV Bank" style="display: block;"></a>
+                 </p>
                </div>
                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text-right">
                   <p>Terms of use | Privacy Policy</p>
@@ -2081,6 +2118,9 @@ window.ORA = window.ORA || {productReady: []};
 
 function ApplyLoan() {
 
+document.getElementById('my_iframe_container').style.display='block';
+document.getElementById('section-about').style.display='none';
+document.getElementById('section-typeloan').style.display='none';
 var cxDataObject = {
    
    "wt.z_page_category":"Home Loan Page", 
@@ -2112,6 +2152,9 @@ function closeProfile() {
 
 function closeForm() {
 document.getElementById('slider').style.display='block';
+document.getElementById('my_iframe_container').style.display='none';
+document.getElementById('section-about').style.display='block';
+document.getElementById('section-typeloan').style.display='block';
 document.getElementById('StaticHomeBanner').style.display='none';
 document.getElementById('loginm').style.display='none';
   document.getElementById("myForm").style.display = "none";
@@ -2154,6 +2197,7 @@ btn.on('click', function(e) {
     }, '300');
 });
 </script>
+
 <script type="text/javascript">
 // Get the profile picture pop-up element
     var profilePicturePopUp = document.querySelector(".form-popup");
