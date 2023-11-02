@@ -41,7 +41,7 @@
     width: 50px;
     height: 50px;
     line-height: 50px;
-    background: #335dff;
+    background: #00524E;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -54,6 +54,9 @@
     z-index: 9;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+}
+.back-to-top:hover {
+    background: #ffbd05;
 }
 .back-to-top:focus {
     color: #fff;
@@ -404,6 +407,39 @@ padding: 20px !important;
     text-rendering: auto;
     line-height: 1;
 }
+.btn-default {background-color: #00524E;color: #fff;border-color: #00524E;}
+.btn-default:hover { color: #fff; background-color: #ffbd05; border-color: #ffbd05; }
+a { color: #00524E; text-decoration: none; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+a:focus, a:hover { text-decoration: none; color: #ffbd05; }
+#navigation>ul>li:hover>a { color: #00524E; }
+#navigation ul ul li:hover>a, #navigation ul ul li a:hover { color: #00524E; background-color: #f4f6f8; }
+#navigation ul ul li a .badge { font-size: 10px; background: #ffbd05; padding: 1px 7px; color: #fff; }
+.btn-link {
+    color: #00524E;
+	border-bottom: 2px solid #ffbd05;}
+.btn-link:hover {
+    color: #ffbd05;
+	border-bottom: 2px solid #00524E;}	
+	.tiny-footer {
+    background-color: #00524E;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	    color: #FFF;
+}
+iframe {
+    overflow-clip-margin: content-box !important;
+    overflow: clip !important;
+    border-width: 2px;
+    border-style: inset;
+    border-color: #00524E;
+   
+}
+.elq-form-submit {
+display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 </style>
    </head>
    <body>
@@ -414,7 +450,7 @@ padding: 20px !important;
                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-6 col-6">
                   <!-- logo -->
                   <div class="logo">
-                     <a href="#"><img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bd87c0f9a-d141-459c-af7b-49abcc7f6574%7D_logo-png_160px.png" alt="Demo Bank"></a>
+                     <a href="#"><img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bd3d2f321-fef9-48b4-8b51-832674ed689a%7D_BIDVNew.png" alt="BIDV Bank" style="display: block;"></a>
                   </div>
                </div>
                <!-- logo -->
@@ -476,7 +512,7 @@ padding: 20px !important;
                      <button onclick="Loginpopup()" class="btn btn-default">Login</button>
                   </div>
 				  <div class="profile-picture ProfilePic" id="ProfilePic1"  style="display:none;">
-                   <img onclick="openForm()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc91acb29-a294-4172-8ae9-aed2591db6c9%7D_Mitch_Morris_70x70.png" alt="ProfilePic">
+                   <img onclick="openForm()" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B732d96e7-31cb-4ed9-b771-c9703d56d7b2%7D_MitchMorris.png" alt="ProfilePic">
 
                   </div>
 				 
@@ -485,7 +521,7 @@ padding: 20px !important;
   <Button class="close-button" onclick="closeProfile()">&times;</Button>
   <form class="form-container">
   
-   <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc91acb29-a294-4172-8ae9-aed2591db6c9%7D_Mitch_Morris_70x70.png" style="vertical-align: middle;display: block;margin-left: auto;margin-right: auto;" alt="ProfilePic">
+   <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B732d96e7-31cb-4ed9-b771-c9703d56d7b2%7D_MitchMorris.png" style="vertical-align: middle;display: block;margin-left: auto;margin-right: auto;" alt="ProfilePic">
 
     <h2>Hi Mitch Moris</h2>
 
@@ -597,7 +633,7 @@ padding: 20px !important;
           margin-top: 16px!important;margin-bottom: 16px!important;color: #fff!important;background-color: #4CAF50!important;width: 100%;border: none;
           display: inline-block;padding: 8px 16px;vertical-align: middle;overflow: hidden;text-decoration: none;text-align: center;cursor: pointer;white-space: nowrap;
           ">Login</button>
-        <span id="loginsuccess" style="display: none; color: #4CAF50!important;"><b>Login Successful</b></span>
+        <span id="loginsuccess" style="display: none; color: #00524E!important;"><b>Login Successful</b></span>
 		 <span id="loginfailure"  style="display: none; color: #f44336!important"><b>Check your EmailID and Password</b></span>
 		
       </div>
@@ -647,9 +683,9 @@ padding: 20px !important;
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-8 col-8">
                                  <div class="btn-action"> 
 								 <button  onclick="Loginpopup()" id="ApplyBtnlogin" style="display: block; position:absolute; padding-left: 45px;" class="btn btn-apply">Apply for loan</button>
-								 <a  onclick="ApplyLoan()" id="ApplyBtn1" style="display: none; position:absolute; padding-left: 45px;" href="http://marketingcloud04.eloquademos.com/DemoBank_Login_TY_EN?elqTrackId=4f8cd0ad7aed427b9eb65a8e9397b5be" class="btn btn-apply">Apply for loan</a> 
+								 <a  onclick="ApplyLoan()" id="ApplyBtn1" style="display: none; position:absolute; padding-left: 45px;" href="#my_iframe_container" class="btn btn-apply">Apply for loan</a> 
 								 <a href="#section-apply" class="btn btn-primary">Get a call back</a> 
-								 <a href="#" class="btn btn-default">Emi Calculator</a> </div>
+								 <a href="#" class="btn btn-secondary">Emi Calculator</a> </div>
                               </div>
                            </div>
                         </div>
@@ -721,6 +757,13 @@ Digital Banking</a>
                   <div class="wrapper-content bg-white">
                       <!-- content start -->
     <div class="container">
+	
+	<div id="my_iframe_container" style="display:none">
+	
+  <iframe class="iframe" id="my_iframe" height="1080" width="1200" src="https://gseopa00175.rightnowdemo.com/web-determinations/startsession/Loan%20Advisor%20Demo" style="
+    transform: scale(0.80);
+    margin: 0px -55px;
+"></iframe></div>
 	<div class="pinside60" id="section-Recommendations">
 						<div class="row">
                               <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12 col-12">
@@ -786,7 +829,7 @@ Digital Banking</a>
                                 <div class="card bg-light">
                                     <div class="card-body">
                                         <h2>Upgrade Credit Card</h2>
-                                        <p>Duis faucibus sed leo a maximus. Donec hendrerit velit lacus, eu molestie metus rutrum nonecenas quis purus bibendum arcu euismod elementum id in quam.</p>
+                                        <p>Upgrading your credit card can be a great way to get better rewards, lower interest rates, and other perks. But with so many different cards on the market, it can be tough to know where to start.</p>
                                         <ul class=" bullet bullet-check-circle list-unstyled">
                                             <li>No annual fee</li>
                                             <li>Zero fuel surcharge</li>
@@ -801,7 +844,7 @@ Digital Banking</a>
                                 <div class="card bg-light">
                                     <div class="card-body">
                                         <h2>Personal Loan</h2>
-                                        <p>Nullam vel pretium urna. Aenean fringilla ex est, id fermentum lorem mattis sit amet. Vivamus ut scelerisque massa, eget blandit lacus.</p>
+                                        <p>A personal loan can be a great way to get the money you need for unexpected expenses, such as a medical emergency. It can also be a good option for financing a large purchase, such as a new car or vacation.</p>
                                         <ul class=" bullet bullet-check-circle list-unstyled">
                                             <li>Competitive interest rates</li>
                                             <li>Quick and easy to apply for</li>
@@ -1065,7 +1108,8 @@ Digital Banking</a>
                                 <div class="card bg-light">
                                     <div class="card-body">
                                         <h2>Smart banking features</h2>
-                                        <p>Duis faucibus sed leo a maximus. Donec hendrerit velit lacus, eu molestie metus rutrum nonecenas quis purus bibendum arcu euismod elementum id in quam.</p>
+                                        <p>
+Smart banking features are technologies and services that use artificial intelligence (AI), machine learning, and data analytics to improve the customer experience and make banking more efficient and secure.</p>
                                         <ul class=" bullet bullet-check-circle list-unstyled">
                                             <li> Automated financial planning and budgeting</li>
                                             <li>Proactive fraud detection and prevention</li>
@@ -1189,7 +1233,7 @@ Digital Banking</a>
                                 <div class="bg-white pinside40 outline mb30 text-center service-block">
                                     <div class="icon mb40"> <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bf6dae318-2685-4b82-b377-b7c80be45dd0%7D_PersonalLoan80x80.png" alt="Personal Loan Icon" class="icon-svg-2x"> </div>
                                     <h2><a href="#" class="title">Personal Loan</a></h2>
-                                    <p>Serlaoreet necroin lobortis diam sit sitamet urna porttitor sitamesec controces livose anois.</p>
+                                    <p>A personal loan can be a great way to get the money you need for unexpected expenses, such as a medical emergency. It can also be a good option for financing a large purchase, such as a new car or vacation.</p>
                                     <a href="#" class="btn-link">Read More</a> </div>
                             </div>
                               
@@ -1197,7 +1241,7 @@ Digital Banking</a>
                                 <div class="bg-white pinside40 outline mb30 text-center service-block">
                                     <div class="icon mb40"> <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B94afad30-154b-4f3d-bd33-2036e06acad3%7D_EducationLoan80x80.png" alt="Education Loan Icon" class="icon-svg-2x"></div>
                                     <h2><a href="#" class="title">Education Loan</a></h2>
-                                    <p>Serlaoreet necroin lobortis diam sit sitamet urna porttitor sitamesec controces livose anois.</p>
+                                    <p>An education loan is a type of loan that is specifically designed to help students pay for the cost of their education. Education loans can be used to cover the cost of tuition, fees, books, and other living expenses.</p>
                                     <a href="#" class="btn-link">Read More</a> </div>
                             </div>
                             
@@ -1205,7 +1249,7 @@ Digital Banking</a>
                                 <div class="bg-white pinside40 outline mb30 text-center service-block">
                                     <div class="icon mb40"> <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Be935638c-96c7-471f-9b3f-34809cb01247%7D_Carloan80x80.png" alt="Car Loan Icon" class="icon-svg-2x"></div>
                                     <h2><a href="#" class="title">Car Loan</a></h2>
-                                    <p>Serlaoreet necroin lobortis diam sit sitamet urna porttitor sitamesec controces livose anois. </p>
+                                    <p>A car loan is a convenient way to hit the road in your dream vehicle without the burden of paying the full amount upfront. No more waiting to own your desired car – simply take out a car loan to meet your financial needs.</p>
                                     <a href="#" class="btn-link">Read More</a> </div>
                             </div>
                              
@@ -1230,7 +1274,7 @@ Digital Banking</a>
                         </div>
                         <hr>
                         <p>Vestibulum placerat velit et libero facilisis, at luctus dui cursus. Nullam non est at ipsum dignissim eleifend nec eu arcu. </p>
-                         <a onclick="ApplyLoan()" id="ApplyBtn2" style="display: none; position:absolute;" href="http://marketingcloud04.eloquademos.com/DemoBank_Login_TY_EN?elqTrackId=d2fc6aa9f7c04455901683e938e52f76" class="btn btn-apply">Apply for loan</a>
+                         <a onclick="ApplyLoan()" id="ApplyBtn2" style="display: none; position:absolute;" href="#my_iframe_container" class="btn btn-apply">Apply for loan</a>
                      </div>
                      <div class="section-scroll" id="section-typeloan">
                         <div class="bg-light pinside60">
@@ -1424,8 +1468,8 @@ Digital Banking</a>
                            <div class="row">
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                  <div class="section-title mb60 text-center">
-                                    <h1>Apply Now</h1>
-                                    <p>Now apply for a Home Loan online, All you need to do is provide your details below to proceed with application form.</p>
+                                    <h1>Subscribe to receive latest updates from BIDV</h1>
+                                    <p>Now subscribe for a offers and lastest news related to Loans, All you need to do is provide your details below in the form.</p>
                                  </div>
                               </div>
                            </div>
@@ -1472,14 +1516,27 @@ Digital Banking</a>
                                                 <input id="fe1723" name="mobilePhone" value="" type="text" placeholder="Phone" class="form-control input-md">
                                              </div>
                                           </div>
-                                         <!-- Button -->
+                                         
+                                      </div>
+									  <div class="row" style="margin: 0 auto;display: flex;justify-content: center;">
+									  <!-- Button -->
                                           <div class="form-group col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                                              <div class="">
                                                 
 												<input type="Submit" class="btn btn-primary btn-block" value="Submit" id="fe1727">
                                              </div>
                                           </div>
-                                      </div>
+									  </div>
+									  <div class="row" style="margin: 0 auto;display: flex;justify-content: center;">
+									  <!-- Button -->
+                                          <div class="form-group col-xl-9 col-lg-4 col-md-12 col-sm-12 col-12" style="margin: 0 auto;display: flex;justify-content: center;">
+                                             <div class="">
+									  <span id="Subscribed" style="display: none;color: rgb(0, 82, 78) !important;font-size: 36px;"><b>Subscribed Successfully !!!</b></span>
+									  <span id="SubscribedFail" style="display: none; color: #00524E!important;"><b>Subscribed Failed. Check submitted details !!!</b></span>
+									  
+									  </div>
+                                          </div>
+									  </div>
                                     </fieldset>
                                  </form>
 								 
@@ -1550,7 +1607,7 @@ Digital Banking</a>
             </div>
          </div>
       </div>
-	<div id="homeLoanPopup" class="" style="display: none;text-align: justify;z-index: 3;padding-top: 120px;position: fixed;left: 15px;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgb(0 0 0 / 0%);">
+	<!--div id="homeLoanPopup" class="" style="display: none;text-align: justify;z-index: 3;padding-top: 120px;position: fixed;left: 15px;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgb(0 0 0 / 0%);">
    <div class="" style="max-width: 310px;animation: animatezoom 0.6s;box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);width: 255px;margin: auto; background-color: #fff; position: absolute; padding: 0; outline: 0;">
       <div class="" style="text-align: center!important;">
          <span onclick="document.getElementById('homeLoanPopup').style.display='none'" class="hover-red " style="font-size: 25px!important;position: absolute;right: 0;top: 0;padding: 10px;">×</span>
@@ -1566,7 +1623,40 @@ Digital Banking</a>
          </div>
       </div>
    </div>
-</div>  
+</div-->  
+<!--div id="homeLoanPopup" class="" style="display: block; z-index: 3; padding-top: 100px; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+   <div class="" style="max-width: 255px;animation: animatezoom 0.6s;box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);width: 900px;margin: auto; background-color: #fff; position: relative; padding: 0; outline: 0;">
+      <div class="" style="text-align: center!important;">
+         <span onclick="document.getElementById('homeLoanPopup').style.display='none'" class="hover-red " style="font-size: 25px!important;position: absolute;right: 0;top: 0;padding: 10px;">×</span>
+      </div>
+      <div class="w3-container" style="padding: 0.01em 16px;font-family: Verdana,sans-serif;font-size: 15px;line-height: 1.5;">
+         <div class="w3-section" style="margin-top: 30px!important;margin-bottom: 16px!important;font-family: Verdana,sans-serif;font-size: 15px;color: #000 !important; line-height: 1.5;">
+           <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B5d60bfef-89d6-4329-9378-901d99efe8a6%7D_House60x60.png" alt="BacktoHomeLoan" style="width: 50px;display: block;margin-left: auto;margin-right: auto;
+">           
+		   <label><h1 style="font-size: 20px;">We want you back!</h1></label>
+			
+  
+  <a href="#Homeloan" onclick="showMyDivHome()">Continue where you left.. Click here to apply for home loan!</a>
+         </div>
+      </div>
+   </div>
+</div-->
+<div id="homeLoanPopup" class="" style="display: block; z-index: 3; padding-top: 100px; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+   <div class="" style="max-width: 450px;animation: animatezoom 0.6s;box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);width: 900px;margin: auto;background-color: #fff;position: relative;padding: 0;outline: 0;">
+      <div class="" style="text-align: center!important;">
+         <span onclick="document.getElementById('homeLoanPopup').style.display='none'" class="hover-red " style="font-size: 35px!important;position: absolute;/* right: 0; */top: 0;padding: 0px;left: 0;">×</span>
+      </div>
+      <div class="w3-container" style="font-family: Verdana,sans-serif;font-size: 15px;line-height: 1.5;">
+         
+           <img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bf12efd84-375b-4e21-8530-0cd39b246e48%7D_BIDVSpecialOffer.gif" alt="BacktoHomeLoan" style="display: block;margin-left: auto;margin-right: auto;
+">           
+		   			
+  
+  <a href="#Homeloan" onclick="showMyDivHome()" style="text-align: center;margin: 0 auto;display: block;font-size: 18px;">**Click here to know more about home loan**</a>
+     
+      </div>
+   </div>
+</div>
 
       <div class=" ">
          <!-- content start -->
@@ -1843,57 +1933,7 @@ Digital Banking</a>
                            </div>
                            <div class="row">
                               <div class="col-md-12">
-                                 <form method="post" name="BIDVHomeLoanDemo" action="https://s348607904.t.eloqua.com/e/f2" onsubmit="return handleFormSubmit(this)" id="form191" class="elq-form">
-									<input value="BIDVHomeLoanDemo" type="hidden" name="elqFormName">
-									<input value="348607904" type="hidden" name="elqSiteId">
-									<input name="elqCampaignId" type="hidden">
-									<input type="hidden" class="elq-item-input" name="Language" id="fe1726" value="English">
-									<input type="hidden" class="elq-item-input" name="userid" id="fe1730" value="">
-                                    <fieldset>
-                                       
-                                       <div class="row">
-                                          <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                             <label class="control-label" for="fe1721">Frist Name<span class="elq-required">*</span></label>
-                                             <div class="">
-                                                <input id="fe1721" name="firstName" value="" type="text" placeholder="FristName" class="form-control input-md">
-                                                <span class="help-block"> </span> 
-                                             </div>
-                                          </div>
-										  <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                             <label class="control-label" for="fe1722">Last Name</label><span class="elq-required">*
-                </span>
-                                             <div class="">
-                                                <input id="fe1722" name="lastName"  value="" type="text" placeholder="LastName" class="form-control input-md">
-                                                <span class="help-block"> </span> 
-                                             </div>
-                                          </div>
-                                          
-                                          <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                             <label class=" control-label" for="fe1720">E-Mail</label> <span class="elq-required">*
-                </span>
-                                             <div class="">
-                                                <input id="fe1720" name="emailAddress" value="" type="text" placeholder="E-mail" class="form-control input-md">
-                                             
-											 </div>
-                                          </div>
-                                          
-                                          <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                             <label class="control-label" for="fe1723">Phone</label><span class="elq-required">*
-                </span>
-                                             <div class="">
-                                                <input id="fe1723" name="mobilePhone" value="" type="text" placeholder="Phone" class="form-control input-md">
-                                             </div>
-                                          </div>
-                                        
-                                          <div class="form-group col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                                             <div class="">
-                                                
-												<input type="Submit" class="btn btn-primary btn-block" value="Submit" id="fe1727">
-                                             </div>
-                                          </div>
-                                      </div>
-                                    </fieldset>
-                                 </form>
+                                
 								
                               </div>
                            </div>
@@ -1913,7 +1953,8 @@ Digital Banking</a>
          <div class="container">
             <div class="row">
                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                  <p><a target="_blank" href="#">Demo Bank</a></p>
+                  <p><a href="#"><img src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7B6a63f02e-04d2-4760-8ee6-298da909130a%7D_Footer.png" alt="BIDV Bank" style="display: block;"></a>
+                 </p>
                </div>
                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text-right">
                   <p>Terms of use | Privacy Policy</p>
@@ -2032,7 +2073,7 @@ document.getElementById('section-Recommendations-SmartBanking').style.display='n
 document.getElementById('section-Recommendations-Creditcards').style.display='none';
 document.getElementById('CreditOffers').style.display='none';
 document.getElementById('section-Recommendations').style.display='none';
-
+document.getElementById('section-apply').hidden = true;
 var cxDataObject = {
    
    "wt.z_page_category":"Home Loan Page", 
@@ -2062,6 +2103,9 @@ window.ORA = window.ORA || {productReady: []};
 
 function ApplyLoan() {
 
+document.getElementById('my_iframe_container').style.display='block';
+document.getElementById('section-about').style.display='none';
+document.getElementById('section-typeloan').style.display='none';
 var cxDataObject = {
    
    "wt.z_page_category":"Home Loan Page", 
@@ -2093,6 +2137,9 @@ function closeProfile() {
 
 function closeForm() {
 document.getElementById('slider').style.display='block';
+document.getElementById('my_iframe_container').style.display='none';
+document.getElementById('section-about').style.display='block';
+document.getElementById('section-typeloan').style.display='block';
 document.getElementById('StaticHomeBanner').style.display='none';
 document.getElementById('loginm').style.display='none';
   document.getElementById("myForm").style.display = "none";
@@ -2116,7 +2163,7 @@ document.getElementById('loginsuccess').style.display='none';
 document.getElementById('loginfailure').style.display='none';
 document.getElementById('CreditOffers').style.display='none';
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='none';
-
+document.getElementById('section-apply').hidden = false;
 }
 
 
@@ -2135,36 +2182,8 @@ btn.on('click', function(e) {
     }, '300');
 });
 </script>
-<script type="text/javascript">
-// Get the profile picture pop-up element
-    var profilePicturePopUp = document.querySelector(".form-popup");
 
-    // Get the close button element
-    var closeButton = profilePicturePopUp.querySelector(".close-button");
-var stickyMenu = document.getElementById("sticky-menu");
 
-// Get the menu icon element
-var menuIcon = stickyMenu.querySelector(".icon");
-
-// Add an event listener to the menu icon element
-menuIcon.addEventListener("click", function() {
-  // Toggle the sticky menu element's active class
-  stickyMenu.classList.toggle("active");
-});
-
-// Add an event listener to the window
-window.addEventListener("scroll", function() {
-  // Get the scroll position
-  var scrollPosition = window.scrollY;
-
-  // If the scroll position is greater than zero, fix the sticky menu element
-  if (scrollPosition > 0) {
-    stickyMenu.classList.add("fixed");
-  } else {
-    stickyMenu.classList.remove("fixed");
-  }
-});
-</script>
 <script  type="text/JavaScript">
 function PersonalizedOffers() {
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='block';
@@ -2242,15 +2261,50 @@ window.ORA = window.ORA || {productReady: []};
 </script>
 
 <script>function handleFormSubmit(ele) {
-	unknownsubmittrack();
-    var submitButton = ele.querySelector('input[type=submit]');
-    var spinner = document.createElement('span');
-    spinner.setAttribute('class', 'loader');
-    submitButton.setAttribute('disabled', true);
-    submitButton.style.cursor = 'wait';
-    submitButton.parentNode.appendChild(spinner);
-    return true;
-  }
+unknownsubmittrack();
+  event.preventDefault();
+
+  // Submit the form data using AJAX.
+  var formData = new FormData();
+
+  formData.append('emailAddress', document.getElementById('fe1720').value);
+  formData.append('firstName', document.getElementById('fe1721').value);
+  formData.append('lastName', document.getElementById('fe1722').value);
+  formData.append('mobilePhone', document.getElementById('fe1723').value);
+
+  $.ajax({
+    url: 'https://s348607904.t.eloqua.com/e/f2?elqFormName=BIDVHomeLoanDemo&elqSiteID=348607904&Language=English',
+    type: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(data) {
+      // Success!
+      //alert("Success");
+	  document.getElementById('Subscribed').style.display='block';
+	  document.getElementById('SubscribedFail').style.display='none';
+	  document.getElementById('fe1721').value='';
+document.getElementById('fe1722').value='' ;
+document.getElementById('fe1720').value='' ;
+document.getElementById('fe1723').value='' ;
+document.getElementById('email').value='' ;
+setTimeout(function() {
+  document.getElementById('section-apply').hidden = true;
+}, 3000);
+
+	return true;
+      // Call the unknownsubmittrack() function after the form has been successfully submitted using AJAX.
+      
+    },
+    error: function(error) {
+      // Error!
+	  document.getElementById('SubscribedFail').style.display='block';
+	  document.getElementById('Subscribed').style.display='none';
+	  document.getElementById('section-apply').hidden = false;
+      //alert("Error: " + error.statusText);
+    }
+  });
+}
   function resetSubmitButton(e){
     var submitButtons = e.target.form.getElementsByClassName('submit-button');
     for(var i=0;i<submitButtons.length;i++){
