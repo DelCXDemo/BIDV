@@ -1469,7 +1469,7 @@ Smart banking features are technologies and services that use artificial intelli
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                  <div class="section-title mb60 text-center">
                                     <h1>Subscribe to receive latest updates from BIDV</h1>
-                                    <p>Now subscribe for a offers and lastest news related to Loans, All you need to do is provide your details below to proceed with application form.</p>
+                                    <p>Now subscribe for a offers and lastest news related to Loans, All you need to do is provide your details below in the form.</p>
                                  </div>
                               </div>
                            </div>
@@ -2056,7 +2056,7 @@ document.getElementById('section-Recommendations-SmartBanking').style.display='n
 document.getElementById('section-Recommendations-Creditcards').style.display='none';
 document.getElementById('CreditOffers').style.display='none';
 document.getElementById('section-Recommendations').style.display='none';
-
+document.getElementById('section-apply').hidden = true;
 var cxDataObject = {
    
    "wt.z_page_category":"Home Loan Page", 
@@ -2146,7 +2146,7 @@ document.getElementById('loginsuccess').style.display='none';
 document.getElementById('loginfailure').style.display='none';
 document.getElementById('CreditOffers').style.display='none';
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='none';
-
+document.getElementById('section-apply').hidden = false;
 }
 
 
@@ -2271,6 +2271,10 @@ document.getElementById('fe1722').value='' ;
 document.getElementById('fe1720').value='' ;
 document.getElementById('fe1723').value='' ;
 document.getElementById('email').value='' ;
+setTimeout(function() {
+  document.getElementById('section-apply').hidden = true;
+}, 3000);
+
 	return true;
       // Call the unknownsubmittrack() function after the form has been successfully submitted using AJAX.
       
@@ -2279,6 +2283,7 @@ document.getElementById('email').value='' ;
       // Error!
 	  document.getElementById('SubscribedFail').style.display='block';
 	  document.getElementById('Subscribed').style.display='none';
+	  document.getElementById('section-apply').hidden = false;
       //alert("Error: " + error.statusText);
     }
   });
