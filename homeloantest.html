@@ -2276,38 +2276,34 @@ window.ORA = window.ORA || {productReady: []};
 </script>
 
 <script>function handleFormSubmit(ele) {
-	
-     event.preventDefault();
-
-  $('form.elq-form').submit(function(event) {
   event.preventDefault();
 
-  // Declare the formData variable inside the submit() event handler.
+  // Submit the form data using AJAX.
   var formData = new FormData();
 
-// Add the form data to the FormData object.
-formData.append('emailAddress', document.getElementById('fe1720').value);
-formData.append('firstName', document.getElementById('fe1721').value);
-formData.append('lastName', document.getElementById('fe1722').value);
-formData.append('mobilePhone', document.getElementById('fe1723').value);
+  formData.append('emailAddress', document.getElementById('fe1720').value);
+  formData.append('firstName', document.getElementById('fe1721').value);
+  formData.append('lastName', document.getElementById('fe1722').value);
+  formData.append('mobilePhone', document.getElementById('fe1723').value);
 
   $.ajax({
     url: 'https://s348607904.t.eloqua.com/e/f2?elqFormName=BIDVHomeLoanDemo&elqSiteID=348607904&Language=English',
     type: 'POST',
     data: formData,
     processData: false,
-  contentType: false,
+    contentType: false,
     success: function(data) {
       // Success!
       alert("Success");
-	  unknownsubmittrack();
+
+      // Call the unknownsubmittrack() function after the form has been successfully submitted using AJAX.
+      unknownsubmittrack();
     },
     error: function(error) {
       // Error!
       alert("Error: " + error.statusText);
     }
   });
-});
 }
   function resetSubmitButton(e){
     var submitButtons = e.target.form.getElementsByClassName('submit-button');
