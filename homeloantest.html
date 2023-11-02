@@ -284,7 +284,7 @@ padding: 20px !important;
     color: #FFF!important;
     font-weight: 700;
 }
-.page-header-homeloan { margin: 0; padding: 175px 0px 80px; min-height: 410px; border: none; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(0, 0, 0, 0.2) url(https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bc8f07723-4727-4379-b2bb-3a369c94f649%7D_Home1_1900x720.png) no-repeat center; background-size: cover; }
+.page-header-homeloan { margin: 0; padding: 0px 0px 80px; min-height: 410px; border: none; }
 .page-header-carloan { margin: 0; padding: 0px 0px 80px; min-height: 410px; border: none; }
 
 .is-invalid {
@@ -411,6 +411,8 @@ padding: 20px !important;
 .btn-default:hover { color: #fff; background-color: #ffbd05; border-color: #ffbd05; }
 a { color: #00524E; text-decoration: none; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
 a:focus, a:hover { text-decoration: none; color: #ffbd05; }
+.sub-nav>.nav li a:hover { background-color: #fff; color: #00524E; }
+.sub-nav>.nav li a:focus { background-color: #fff; color: #ffbd05; }
 #navigation>ul>li:hover>a { color: #00524E; }
 #navigation ul ul li:hover>a, #navigation ul ul li a:hover { color: #00524E; background-color: #f4f6f8; }
 #navigation ul ul li a .badge { font-size: 10px; background: #ffbd05; padding: 1px 7px; color: #fff; }
@@ -653,7 +655,7 @@ display: flex;
 
 
 <div  id="HomeLoan">
-      <div class="">
+      <div class="page-header-homeloan">
          <div class="container">
 		  
             <div class="row">
@@ -667,7 +669,7 @@ display: flex;
                   </div>
                </div>
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <div class="bg-white pinside30">
+                  <div class="bg-white pinside30" style="padding: 30px;">
                      <div class="row">
                         <div class="col-xl-5 col-lg-5 col-md-4 col-sm-4 col-4">
                            <h1 class="page-title">Home Loan</h1>
@@ -691,7 +693,18 @@ display: flex;
                         </div>
                      </div>
                   </div>
-				<!--div id="sticky-menu" class="fixed">
+				  <div id="sub-nav-sticky-wrapper" class="sticky-wrapper" style="height: 58px;">
+				   <div class="sub-nav" id="sub-nav">
+                     <ul class="nav nav-justified">
+                        <li class="nav-item"><a href="#section-about" class="page-scroll nav-link">About Loan</a></li>
+                        <li class="nav-item"><a href="#section-typeloan" class="page-scroll nav-link">types of loan</a></li>
+                        <li class="nav-item"><a href="#section-feature" class="page-scroll nav-link">features &amp; Benefits</a></li>
+                        <li class="nav-item"><a href="#section-eleigiblity" class="page-scroll nav-link">eligibility</a></li>
+                        <li class="nav-item"><a href="#section-faq" class="page-scroll nav-link">FAQ’S</a></li>
+                        <li class="nav-item"><a href="#" class="page-scroll nav-link">Enquire Now</a></li>
+                     </ul>
+                  </div>
+				  </div>				<!--div id="sticky-menu" class="fixed">
  
 <div class="icon"><img style="padding-right:10px;" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Bb274fcec-9f88-46cb-a129-c890581617fd%7D_Digitalbanking_40x40.png" alt="DigitalbankIcon"></div>
   <div class="icon"><img style="padding-right:10px;" src="https://img03.en25.com/EloquaImages/clients/MarketingCloud04/%7Ba11986ed-e79a-44dc-9cbc-ba0b16492f4e%7D_Loan_40x40.png" alt="Loan"></div>
@@ -735,16 +748,7 @@ Digital Banking</a>
 </div>
 
 <!--End Sticky Icon-->
-                  <div class="sub-nav" id="sub-nav">
-                     <ul class="nav nav-justified">
-                        <li class="nav-item"><a href="#section-about" class="page-scroll nav-link">About Loan</a></li>
-                        <li class="nav-item"><a href="#section-typeloan" class="page-scroll nav-link">types of loan</a></li>
-                        <li class="nav-item"><a href="#section-feature" class="page-scroll nav-link">features &amp; Benefits</a></li>
-                        <li class="nav-item"><a href="#section-eleigiblity" class="page-scroll nav-link">eligibility</a></li>
-                        <li class="nav-item"><a href="#section-faq" class="page-scroll nav-link">FAQ’S</a></li>
-                        <li class="nav-item"><a href="#section-apply" class="page-scroll nav-link">Apply Now</a></li>
-                     </ul>
-                  </div>
+                 
                </div>
             </div>
          </div>
@@ -1317,7 +1321,7 @@ Smart banking features are technologies and services that use artificial intelli
                      <div class="bg-default pinside80 text-center">
                         <div class="row">
                            <h1 class="text-white">Get financing for whatever you need now</h1>
-                           <a href="#section-apply" class="btn btn-default" style="margin-left: 35px;">Enquire Now</a> 
+                           <a href="#" class="btn btn-default" style="margin-left: 35px;">Enquire Now</a> 
                         </div>
                      </div>
                      <div class="section-scroll" id="section-feature">
@@ -1592,8 +1596,8 @@ Smart banking features are technologies and services that use artificial intelli
                         </div>
                      </div>
                   </div>
-				
-                  <div class="sub-nav" id="sub-nav">
+				<div id="sub-nav-sticky-wrapper" class="sticky-wrapper" style="height: 75px;">
+                  <div class="sub-nav" id="sub-nav2">
                      <ul class="nav nav-justified">
                         <li class="nav-item"><a onclick="showhomeLoanPopup()" href="#section-about-car" class="page-scroll nav-link">About Loan</a></li>
                         <li class="nav-item"><a onclick="showhomeLoanPopup()" href="#section-typeloan-car" class="page-scroll nav-link">types of loan</a></li>
@@ -1603,6 +1607,7 @@ Smart banking features are technologies and services that use artificial intelli
                         <li class="nav-item"><a href="#" class="page-scroll nav-link">Apply Now</a></li>
                      </ul>
                   </div>
+				  </div>
                </div>
             </div>
          </div>
@@ -2450,6 +2455,13 @@ setTimeout(function() {
   
 </script>
 <script  type="text/JavaScript">
+$(document).on('ready', function() {
+    "use strict";
+    if ($(window).width() >= "768") {
+        $("#sub-nav2").sticky({ topSpacing: 100 });
+    }
+
+});
 function unknownsubmittrack() {
 
 
@@ -2506,6 +2518,9 @@ window.ORA = window.ORA || {productReady: []};
     ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.view({"data": cxDataObject})}}(cxDataObject)]);
 })();
 </script>
+<!-- sticky header -->
+    <script type="text/javascript" src="https://img03.en25.com/Web/MarketingCloud04/{f8ee1af6-7189-4892-8452-3e9d8c30123f}_jquery.sticky.js"></script>
+    <script type="text/javascript" src="https://img03.en25.com/Web/MarketingCloud04/{ea10a3e6-6bcd-467f-9a63-0e2f152e53e5}_sticky-header.js"></script>
 <script type="text/javascript" src="https://img03.en25.com/Web/MarketingCloud04/{30982677-1846-419c-aca2-7e45b3107a48}_owl.carousel.min.js"></script>
 		<script type="text/javascript" src="https://img03.en25.com/Web/MarketingCloud04/{0a807863-4b0a-46db-9281-f9c24263f1dd}_slider-carousel.js"></script>
 		<script type="text/javascript" src="https://img03.en25.com/Web/MarketingCloud04/{e6ca4522-ee6a-4a3c-84f9-58428be9d010}_service-carousel.js"></script>
