@@ -295,7 +295,7 @@ padding: 20px !important;
 .sticky-icon  {
 	z-index:1;
 	position:fixed;
-	top:25%;
+	top:40%;
 	right:0%;
 	width:210px;
 	display:flex;
@@ -694,7 +694,7 @@ display: flex;
                      </div>
                   </div>
 				  <!--div id="sub-nav-sticky-wrapper" class="sticky-wrapper" style="height: 58px;"-->
-				   <div class="sub-nav" id="sub-nav">
+				   <div class="sub-nav" id="sub-nav1">
                      <ul class="nav nav-justified">
                         <li class="nav-item"><a href="#section-about" class="page-scroll nav-link">About Loan</a></li>
                         <li class="nav-item"><a href="#section-typeloan" class="page-scroll nav-link">types of loan</a></li>
@@ -2457,6 +2457,9 @@ setTimeout(function() {
 <script  type="text/JavaScript">
 /*$(document).on('ready', function() {
     "use strict";
+	if ($(window).width() >= "768") {
+        $("#sub-nav1").sticky({ topSpacing: 100 });
+    }
     if ($(window).width() >= "768") {
         $("#sub-nav2").sticky({ topSpacing: 100 });
     }
