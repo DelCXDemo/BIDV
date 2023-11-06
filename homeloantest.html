@@ -2492,6 +2492,13 @@ window.ORA = window.ORA || {productReady: []};
 </script>
    <script type="text/JavaScript">
 (function(){
+const urlParams = new URLSearchParams(window.location.search);
+const action = urlParams.get('action');
+if (action === 'login') {
+    Loginpopup();
+  } else {
+    // Do something else
+  }
 
     // Declare Your Parameters (or leave object empty {})
    var cxDataObject = {
