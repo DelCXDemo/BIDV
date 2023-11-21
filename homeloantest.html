@@ -2559,39 +2559,42 @@ const Source = urlParams.get('wt.z_utm_source');
 
 var timeSpent;
 var startTime;
+var Status;
 
 function startTimer() {
-  startTime = new Date();
+    startTime = new Date();
 }
 
 function calculateTimeSpent() {
-  var currentTime = new Date();
-  var elapsedTime = (currentTime - startTime) / 1000; // Convert milliseconds to seconds
-  return elapsedTime;
+    var currentTime = new Date();
+    var elapsedTime = (currentTime - startTime) / 1000; // Convert milliseconds to seconds
+    return elapsedTime;
 }
 
 startTimer();
 
-setTimeout(function() {
-  timeSpent = calculateTimeSpent();
+// Use setTimeout to delay the calculation of timeSpent
+setTimeout(function () {
+    timeSpent = calculateTimeSpent();
+    Status = (document.getElementById('ProfilePic1').style.display === 'block') ? 'Y' : 'N';
 
-  var cxDataObject = {
-    "data.wt.hm_timespan": timeSpent,
-    "wt.z_login": "Y",
-    "wt.z_page_category": "Home Loan Page",
-    "wt.z_userid": document.getElementById('fe1730').value,
-    "wt.z_consent": "Y",
-    "wt.z_email": document.getElementById('fe1720').value,
-    "wt.z_firstname": document.getElementById('fe1721').value,
-    "wt.z_lastname": document.getElementById('fe1722').value,
-    "wt.z_mobilephone": document.getElementById('fe1723').value,
-  };
+    var cxDataObject = {
+        "data.wt.hm_timespan": timeSpent,
+        "wt.z_login": Status,
+        "wt.z_page_category": "Home Loan Page",
+        "wt.z_userid": document.getElementById('fe1730').value,
+        "wt.z_consent": "Y",
+        "wt.z_email": document.getElementById('fe1720').value,
+        "wt.z_firstname": document.getElementById('fe1721').value,
+        "wt.z_lastname": document.getElementById('fe1722').value,
+        "wt.z_mobilephone": document.getElementById('fe1723').value,
+    };
 
-  window.ORA = window.ORA || { productReady: [] };
-  ORA.productReady.push(['analytics', function(cxDataObject) {
-    return function() { return ORA.view({"data": cxDataObject}); }(cxDataObject);
-  }]);
-}, 10000);
+    window.ORA = window.ORA || { productReady: [] };
+    ORA.productReady.push(['analytics', function (cxDataObject) {
+        return function () { return ORA.view({ "data": cxDataObject }); }(cxDataObject);
+    }]);
+}, 20000); // Adjust the delay as needed
 </script>
 <!-- sticky header -->
     <script type="text/javascript" src="https://delcxdemo.github.io/demo/jquery.sticky.js"></script>
