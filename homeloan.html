@@ -2556,48 +2556,50 @@ const Source = urlParams.get('wt.z_utm_source');
 </script>
 
   <script type="text/JavaScript">
+$(document).ready(function() {
+ 
 
-// Set a timeout to show the popup after 6 seconds
-setTimeout(function() {
 var timeSpent;
-  // Variable to store the start time
 var startTime;
-// Function to initialize the start time
+var Status;
+
 function startTimer() {
     startTime = new Date();
 }
-// Function to calculate and return the time spent in seconds
+
 function calculateTimeSpent() {
     var currentTime = new Date();
     var elapsedTime = (currentTime - startTime) / 1000; // Convert milliseconds to seconds
     return elapsedTime;
 }
-// Example usage:
-// Call startTimer() when the page loads
+
 startTimer();
-// Call calculateTimeSpent() whenever you need to get the time spent
 
-var timeSpent = calculateTimeSpent();
+// Use setTimeout to delay the calculation of timeSpent
+setTimeout(function() {
+    timeSpent = calculateTimeSpent();
+    Status = (document.getElementById('ProfilePic1').style.display === 'block') ? 'Y' : 'N';
 
- 
+    var cxDataObject = {
+        "data.wt.hm_timespan": timeSpent,
+        "wt.z_login": Status,
+        "wt.z_page_category": "Home Loan Page",
+        "wt.z_userid": document.getElementById('fe1730').value,
+        "wt.z_consent": "Y",
+        "wt.z_email": document.getElementById('fe1720').value,
+        "wt.z_firstname": document.getElementById('fe1721').value,
+        "wt.z_lastname": document.getElementById('fe1722').value,
+        "wt.z_mobilephone": document.getElementById('fe1723').value,
+    };
 
-var cxDataObject = {
-   
-   "data.wt.hm_timespan":timeSpent,
-   "wt.z_login":"Y",
-   "wt.z_page_category":"Home Loan Page", 
-   "wt.z_userid": document.getElementById('fe1730').value,
-   "wt.z_consent":"Y",
-   "wt.z_email": document.getElementById('fe1720').value,
-   "wt.z_firstname": document.getElementById('fe1721').value,
-   "wt.z_lastname": document.getElementById('fe1722').value,
-   "wt.z_mobilephone": document.getElementById('fe1723').value,
-   };
-    window.ORA = window.ORA || {productReady: []};
+   window.ORA = window.ORA || {productReady: []};
     ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.view({"data": cxDataObject})}}(cxDataObject)]);
-   
-}, 10000);
+    }, 20000);
+// Adjust the delay as needed
+
+});
 </script>
+
 <!-- sticky header -->
     <script type="text/javascript" src="https://delcxdemo.github.io/demo/jquery.sticky.js"></script>
     <script type="text/javascript" src="https://delcxdemo.github.io/demo/sticky-header.js"></script>
