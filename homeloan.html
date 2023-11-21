@@ -540,7 +540,7 @@ element.style {
     <p><b>Phone : 84777747711 </b></p>
 
     
-    <button type="button" class="btn cancel" onclick="closeForm()" href="#">Sign Out</button>
+    <button type="button" class="btn cancel" onclick="closeForm1()" href="#">Sign Out</button>
   </form>
 </div>
 
@@ -1483,7 +1483,7 @@ Smart banking features are technologies and services that use artificial intelli
                                           <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                              <label class="control-label" for="fe1721">Frist Name<span class="elq-required">*</span></label>
                                              <div class="">
-                                                <input id="fe1721" name="firstName" value="" type="text" placeholder="FristName" class="form-control input-md">
+                                                <input id="fe1721" onClick="FormsubmitTrack()" name="firstName" value="" type="text" placeholder="FristName" class="form-control input-md">
                                                 <span class="help-block"> </span> 
                                              </div>
                                           </div>
@@ -1491,7 +1491,7 @@ Smart banking features are technologies and services that use artificial intelli
                                              <label class="control-label" for="fe1722">Last Name</label><span class="elq-required">*
                 </span>
                                              <div class="">
-                                                <input id="fe1722" name="lastName"  value="" type="text" placeholder="LastName" class="form-control input-md">
+                                                <input id="fe1722" onClick="FormsubmitTrack()" name="lastName"  value="" type="text" placeholder="LastName" class="form-control input-md">
                                                 <span class="help-block"> </span> 
                                              </div>
                                           </div>
@@ -1500,7 +1500,7 @@ Smart banking features are technologies and services that use artificial intelli
                                              <label class=" control-label" for="fe1720">E-Mail</label> <span class="elq-required">*
                 </span>
                                              <div class="">
-                                                <input id="fe1720" name="emailAddress" value="" type="text" placeholder="E-mail" class="form-control input-md">
+                                                <input id="fe1720" onClick="FormsubmitTrack()" name="emailAddress" value="" type="text" placeholder="E-mail" class="form-control input-md">
                                              
 											 </div>
                                           </div>
@@ -1509,7 +1509,7 @@ Smart banking features are technologies and services that use artificial intelli
                                              <label class="control-label" for="fe1723">Phone</label><span class="elq-required">*
                 </span>
                                              <div class="">
-                                                <input id="fe1723" name="mobilePhone" value="" type="text" placeholder="Phone" class="form-control input-md">
+                                                <input id="fe1723" onClick="FormsubmitTrack()" name="mobilePhone" value="" type="text" placeholder="Phone" class="form-control input-md">
                                              </div>
                                           </div>
                                          
@@ -2054,7 +2054,7 @@ var cxDataObject = {
    "wt.z_mobilephone":"84777747711",
    "wt.tx_e":"v",
    "wt.z_activity":"Login",
-   "wt.ev":"Abandon",
+   "wt.ev":"$SignIn",
    "wt.pn_sku":"Bank_HomeLoan",
    "wt.z_language":"English",
 };
@@ -2129,6 +2129,67 @@ document.getElementById('loginfailure').style.display='none';
 document.getElementById('CreditOffers').style.display='none';
 document.getElementById('section-Recommendations-PersonalizedOffers').style.display='none';
 document.getElementById('section-apply').hidden = false;
+}
+
+function closeForm1() {
+document.getElementById('slider').style.display='block';
+document.getElementById('my_iframe_container').style.display='none';
+document.getElementById('section-about').style.display='block';
+document.getElementById('section-typeloan').style.display='block';
+document.getElementById('StaticHomeBanner').style.display='none';
+document.getElementById('loginm').style.display='none';
+  document.getElementById("myForm").style.display = "none";
+    document.getElementById('PersonalizedOffers').style.display='none';
+  document.getElementById('section-Recommendations').style.display='block';
+  document.getElementById('OtherLoans').style.display='block';
+document.getElementById('DigitalBanking').style.display='block';
+document.getElementById('CreditCards').style.display='block';
+    document.getElementById("ProfilePic1").style.display = "none";
+	document.getElementById('ApplyBtn1').style.display='none';
+	document.getElementById('ApplyBtn2').style.display='none';
+	document.getElementById('ApplyBtnlogin').style.display='block';
+   document.getElementById("Login1").style.display = "block";
+   document.getElementById('fe1721').value='';
+document.getElementById('fe1722').value='' ;
+document.getElementById('fe1720').value='' ;
+document.getElementById('fe1723').value='' ;
+document.getElementById('email').value='' ;
+document.getElementById('password').value='' ;
+document.getElementById('loginsuccess').style.display='none';
+document.getElementById('loginfailure').style.display='none';
+document.getElementById('CreditOffers').style.display='none';
+document.getElementById('section-Recommendations-PersonalizedOffers').style.display='none';
+document.getElementById('section-apply').hidden = false;
+
+var cxDataObject = {
+   
+   "wt.ev":"$SignOut",
+};
+
+window.ORA = window.ORA || {productReady: []};
+    ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.click({"data": cxDataObject})}}(cxDataObject)]);
+
+}
+
+function FormsubmitTrack() {
+
+var cxDataObject = {
+   
+"wt.z_page_category":"Home Loan Page", 
+"wt.z_consent":"Y",
+"wt.ev":"$FormViewed",
+"wt.z_email": document.getElementById('fe1720').value,
+"wt.z_firstname": document.getElementById('fe1721').value,
+"wt.z_lastname": document.getElementById('fe1722').value,
+"wt.z_mobilephone": document.getElementById('fe1723').value,
+"wt.z_formname":"HomeLoanSubscribe",
+"wt.z_language":"English",
+
+};
+
+window.ORA = window.ORA || {productReady: []};
+    ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.click({"data": cxDataObject})}}(cxDataObject)]);
+
 }
 
 
@@ -2442,6 +2503,7 @@ var cxDataObject = {
    "wt.z_firstname": document.getElementById('fe1721').value,
    "wt.z_lastname": document.getElementById('fe1722').value,
    "wt.z_mobilephone": document.getElementById('fe1723').value,
+   "wt.ev":"$FormSubmitted",
    "wt.z_activity":"Subscribe",
    "wt.z_language":"English",
 };
