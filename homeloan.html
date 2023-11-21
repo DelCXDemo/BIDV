@@ -2559,6 +2559,7 @@ const Source = urlParams.get('wt.z_utm_source');
 
 // Set a timeout to show the popup after 6 seconds
 setTimeout(function() {
+var timeSpent;
   // Variable to store the start time
 var startTime;
 // Function to initialize the start time
@@ -2575,7 +2576,10 @@ function calculateTimeSpent() {
 // Call startTimer() when the page loads
 startTimer();
 // Call calculateTimeSpent() whenever you need to get the time spent
- var timeSpent = calculateTimeSpent();
+
+timeSpent = calculateTimeSpent();
+
+ 
 
 var cxDataObject = {
    
