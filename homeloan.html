@@ -2560,22 +2560,22 @@ const Source = urlParams.get('wt.z_utm_source');
 // Set a timeout to show the popup after 6 seconds
 setTimeout(function() {
   // Variable to store the start time
-var startTime;
+const startTime;
 // Function to initialize the start time
 function startTimer() {
     startTime = new Date();
 }
 // Function to calculate and return the time spent in seconds
 function calculateTimeSpent() {
-    var currentTime = new Date();
-    var elapsedTime = (currentTime - startTime) / 1000; // Convert milliseconds to seconds
+    const currentTime = new Date();
+    const elapsedTime = (currentTime - startTime) / 1000; // Convert milliseconds to seconds
     return elapsedTime;
 }
 // Example usage:
 // Call startTimer() when the page loads
 startTimer();
 // Call calculateTimeSpent() whenever you need to get the time spent
- var timeSpent = calculateTimeSpent();
+ const timeSpent = calculateTimeSpent();
 //console.log('Time Spent: ' + timeSpent + ' seconds');
 
 var cxDataObject = {
