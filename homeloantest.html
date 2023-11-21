@@ -2556,6 +2556,8 @@ const Source = urlParams.get('wt.z_utm_source');
 </script>
 
   <script type="text/JavaScript">
+$(document).ready(function() {
+ 
 
 var timeSpent;
 var startTime;
@@ -2574,7 +2576,7 @@ function calculateTimeSpent() {
 startTimer();
 
 // Use setTimeout to delay the calculation of timeSpent
-setTimeout(function () {
+setTimeout(function() {
     timeSpent = calculateTimeSpent();
     Status = (document.getElementById('ProfilePic1').style.display === 'block') ? 'Y' : 'N';
 
@@ -2590,12 +2592,14 @@ setTimeout(function () {
         "wt.z_mobilephone": document.getElementById('fe1723').value,
     };
 
-    window.ORA = window.ORA || { productReady: [] };
-    ORA.productReady.push(['analytics', function (cxDataObject) {
-        return function () { return ORA.view({ "data": cxDataObject }); }(cxDataObject);
-    }]);
-}, 20000); // Adjust the delay as needed
+   window.ORA = window.ORA || {productReady: []};
+    ORA.productReady.push(['analytics', function(cxDataObject) {return function() {return ORA.view({"data": cxDataObject})}}(cxDataObject)]);
+    }, 20000);
+// Adjust the delay as needed
+
+});
 </script>
+
 <!-- sticky header -->
     <script type="text/javascript" src="https://delcxdemo.github.io/demo/jquery.sticky.js"></script>
     <script type="text/javascript" src="https://delcxdemo.github.io/demo/sticky-header.js"></script>
